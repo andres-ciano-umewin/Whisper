@@ -89,7 +89,6 @@ public class ShoutView: UIView {
     public private(set) var panGestureActive = false
     public private(set) var shouldSilent = false
     public private(set) var completion: (() -> ())?
-    public private(set) var subtitleLabelHeight = CGFloat(20.0)
     
     // MARK: - Initializers
     
@@ -178,20 +177,18 @@ public class ShoutView: UIView {
             $0.sizeToFit()
         }
         
+        var contentHeight = self.titleLabel.frame.height + 2.5
+        
         if let text = subtitleLabel.text {
-            let neededDimensions =
-                NSString(string: text).boundingRectWithSize(
-                    CGSize(width: subtitleLabel.frame.size.width, height: CGFloat.infinity),
-                    options: NSStringDrawingOptions.UsesLineFragmentOrigin,
-                    attributes: [NSFontAttributeName: subtitleLabel.font],
-                    context: nil
+            let neededDimensions = NSString(string: text).boundingRectWithSize(
+                CGSize(width: subtitleLabel.frame.size.width, height: CGFloat.infinity),
+                options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+                attributes: [NSFontAttributeName: subtitleLabel.font],
+                context: nil
             )
-            subtitleLabelHeight = CGFloat(neededDimensions.size.height) + 7.5
+            Dimensions.height += CGFloat(neededDimensions.size.height) + 7.5
+            contentHeight += CGFloat(neededDimensions.size.height) + 7.5
         }
-        
-        let contentHeight = self.titleLabel.frame.height + 2.5 + subtitleLabelHeight
-        
-        Dimensions.height += subtitleLabelHeight
         
         backgroundView.frame.size = CGSize(width: totalWidth, height: Dimensions.height)
         gestureContainer.frame = CGRect(x: 0, y: Dimensions.height - 20, width: totalWidth, height: 20)

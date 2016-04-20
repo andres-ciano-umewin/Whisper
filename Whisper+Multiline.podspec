@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Whisper+Multiline"
   s.summary          = "Whisper is a component that will make the task of display messages and in-app notifications simple. Now includes multile support."
-  s.version          = "2.1.1"
+  s.version          = "2.1.2"
   s.homepage         = "https://github.com/sergiog90/Whisper"
   s.license          = 'MIT'
   s.author           = { "Sergio Garcia" => "sergiogm.amurrio@gmail.com" }
