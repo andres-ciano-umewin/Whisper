@@ -16,7 +16,7 @@ Break the silence of your UI, whispering, shouting or whistling at it. **Whisper
 
 Display a short message at the bottom of the navigation bar, this can be anything, from a "Great Job!" to an error message. It can have images or even a loader.
 
-#### Shouts
+#### Shouts (Multiline subtitles support)
 
 ![In-App](https://github.com/hyperoslo/Whisper/blob/master/Resources/in-app-notification.png)
 
@@ -43,6 +43,8 @@ The usage of the component is so simple, you just create a message in the case o
 ##### For a Whisper:
 
 ```swift
+import Whisper_Multiline
+
 let message = Message(title: "Enter your message here.", backgroundColor: UIColor.redColor())
 Whisper(message, to: navigationController, action: .Present)
 ```
@@ -50,13 +52,17 @@ Whisper(message, to: navigationController, action: .Present)
 ##### For a Shout:
 
 ```swift
-let announcement = Announcement(title: "Your title", subtitle: "Your subtitle", image: UIImage(named: "avatar"))
+import Whisper_Multiline
+
+let announcement = Announcement(title: "Your title", subtitle: "Your large multiline subtitle", image: UIImage(named: "avatar"))
 Shout(announcement, to: self)
 ```
 
 ##### For a Whistle:
 
 ```swift
+import Whisper_Multiline
+
 let murmur = Murmur(title: "This is a small whistle...")
 Whistle(murmur)
 ```
@@ -69,13 +75,7 @@ If you want to use **Whisper** with Objective-C, you can find information about 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Whisper'
-```
-
-**Whisper** is also available through [Carthage](https://github.com/Carthage/Carthage). To install just write into your Cartfile:
-
-```ruby
-github "hyperoslo/Whisper"
+pod 'Whisper+Multiline'
 ```
 
 ## Roadmap
