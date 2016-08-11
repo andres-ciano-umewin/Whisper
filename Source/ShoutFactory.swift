@@ -6,12 +6,14 @@ public func Shout(announcement: Announcement,
                   titleColor: UIColor? = nil, titleFont: UIFont? = nil,
                   subtitleColor: UIColor? = nil, subtitleFont: UIFont? = nil,
                   backgroundColor: UIColor? = nil,
+                  dragIndicatorVisible: Bool = true,
                   to: UIViewController, completion: (() -> ())? = {}) {
     shout.backgroundView.backgroundColor = backgroundColor ?? ColorList.Shout.background
     shout.titleLabel.textColor = titleColor ?? ColorList.Shout.title
     shout.subtitleLabel.textColor = subtitleColor ?? ColorList.Shout.subtitle
     shout.titleLabel.font = titleFont ?? FontList.Shout.title
     shout.subtitleLabel.font = subtitleFont ?? FontList.Shout.subtitle
+    shout.indicatorView.hidden = !dragIndicatorVisible
     
     shout.craft(announcement, to: to, completion: completion)
 }
