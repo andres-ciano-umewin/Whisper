@@ -2,7 +2,17 @@ import UIKit
 
 let shout = ShoutView()
 
-public func Shout(announcement: Announcement, to: UIViewController, completion: (() -> ())? = {}) {
+public func Shout(announcement: Announcement,
+                  titleColor: UIColor?, titleFont: UIFont?,
+                  subtitleColor: UIColor?, subtitleFont: UIFont?,
+                  backgroundColor: UIColor?,
+                  to: UIViewController, completion: (() -> ())? = {}) {
+    shout.backgroundColor = backgroundColor ?? ColorList.Shout.background
+    shout.titleLabel.textColor = titleColor ?? ColorList.Shout.title
+    shout.subtitleLabel.textColor = subtitleColor ?? ColorList.Shout.title
+    shout.titleLabel.font = titleFont ?? FontList.Shout.title
+    shout.subtitleLabel.font = subtitleFont ?? FontList.Shout.subtitle
+    
     shout.craft(announcement, to: to, completion: completion)
 }
 
