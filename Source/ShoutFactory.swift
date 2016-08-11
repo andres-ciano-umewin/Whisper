@@ -9,7 +9,7 @@ public func Shout(announcement: Announcement,
                   to: UIViewController, completion: (() -> ())? = {}) {
     shout.backgroundColor = backgroundColor ?? ColorList.Shout.background
     shout.titleLabel.textColor = titleColor ?? ColorList.Shout.title
-    shout.subtitleLabel.textColor = subtitleColor ?? ColorList.Shout.title
+    shout.subtitleLabel.textColor = subtitleColor ?? ColorList.Shout.subtitle
     shout.titleLabel.font = titleFont ?? FontList.Shout.title
     shout.subtitleLabel.font = subtitleFont ?? FontList.Shout.subtitle
     
