@@ -3,9 +3,9 @@ import UIKit
 let shout = ShoutView()
 
 public func Shout(announcement: Announcement,
-                  titleColor: UIColor?, titleFont: UIFont?,
-                  subtitleColor: UIColor?, subtitleFont: UIFont?,
-                  backgroundColor: UIColor?,
+                  titleColor: UIColor? = nil, titleFont: UIFont? = nil,
+                  subtitleColor: UIColor? = nil, subtitleFont: UIFont? = nil,
+                  backgroundColor: UIColor? = nil,
                   to: UIViewController, completion: (() -> ())? = {}) {
     shout.backgroundColor = backgroundColor ?? ColorList.Shout.background
     shout.titleLabel.textColor = titleColor ?? ColorList.Shout.title
